@@ -6,8 +6,8 @@
     <title></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
-    <!--[if lte IE 6]><link rel="stylesheet" href="style_ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+    <!--[if lte IE 6]><link rel="stylesheet" href="css/style_ie.css" type="text/css" media="screen, projection" /><![endif]-->
 </head>
 
 <body>
@@ -15,61 +15,77 @@
     <div id="wrapper">
 
         <header id="header">
-            <nav class="breadcrumbs">
-                <a href="#">GitHub Browser</a> &rarr;
-                <span>Main</span>
-            </nav>
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="#">GitHub Browser</a> &rarr;
+                    <span>Main</span>
+                </nav>
 
-            <form class="search" action="">
-                <input type="text" name="search" placeholder="Search">
-            </form>
+                <form class="search" action="" method="get">
+                    <div class="search-block">
+                        <input class="search-input" type="text" name="search" placeholder="Search">
+                        <input class="search-submit" type="submit" value="">
+                    </div>
+                </form>
+
+                <div class="clear"></div>
+            </div>
         </header><!-- #header-->
 
         <div id="content">
-            <div class="repository-info">
-                <div class="repository-info-left-column">
-                    <h1>jhekasoft/HtmlShortcode</h1>
+            <div class="container">
+                <div class="repository-info">
+                    <div class="repository-info-left-column">
+                        <h1>jhekasoft/HtmlShortcode</h1>
 
-                    <div class="repository-info-description">
-                        Description: Module for Zend Framework 2 that allows render view helpers using HTML-code. You can use this module with editors like TinyMCE and CKEditor.
+                        <div class="repository-info-description">
+                            <span class="repository-info-description-title">Description:</span> Module for Zend Framework 2 that allows render view helpers using HTML-code. You can use this module with editors like TinyMCE and CKEditor.
+                        </div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">Watchers:</span> 124</div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">Forks:</span> 25</div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">Open issues:</span> 10</div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">Homepage:</span> <a href="http://jhekasoft.net">http://jhekasoft.net</a></div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">GitHub repo:</span> <a href="https://github.com/jhekasoft/HtmlShortcode">https://github.com/jhekasoft/HtmlShortcode</a></div>
+                        <div class="repository-info-line"><span class="repository-info-line-title">Created at:</span> 2013-06-18T15:22:10</div>
                     </div>
-                    <div class="repository-info-line">Watchers: 124</div>
-                    <div class="repository-info-line">Forks: 25</div>
-                    <div class="repository-info-line">Open issues: 10</div>
-                    <div class="repository-info-line">Homepage: <a href="http://jhekasoft.net">http://jhekasoft.net</a></div>
-                    <div class="repository-info-line">GitHub repo: <a href="https://github.com/jhekasoft/HtmlShortcode">https://github.com/jhekasoft/HtmlShortcode</a></div>
-                    <div class="repository-info-line">Created at: 2013-06-18T15:22:10</div>
-                </div>
-                <div class="repository-info-right-column">
-                    <div class="repository-info-title">Contributors<div>
 
-                    <div class="repository-info-contributor">
-                        <a href="#" class="repository-info-contributor-name">ezimuel</a>
-                        <a href="#" class="repository-info-contributor-like">Like</a>
+                    <div class="repository-info-right-column">
+                        <div class="repository-info-right-column-container">
+                            <div class="repository-info-title">Contributors</div>
+
+                            <table class="repository-info-contributors">
+                                <tr>
+                                    <td><a href="#">ezimuel</a></td>
+                                    <td><a href="#" class="repository-info-contributor-like">Like</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">weierophinney</a></td>
+                                    <td><a href="#" class="repository-info-contributor-like">Like</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">EvanDotPro</a></td>
+                                    <td><a href="#" class="repository-info-contributor-like">Like</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">marc-mabe</a></td>
+                                    <td><a href="#" class="repository-info-contributor-unlike">Unlike</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">blanchonvincent</a></td>
+                                    <td><img src="images/load-icon.gif" alt="Loading..."></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="repository-info-contributor">
-                        <a href="#" class="repository-info-contributor-name">weierophinney</a>
-                        <a href="#" class="repository-info-contributor-like">Like</a>
-                    </div>
-                    <div class="repository-info-contributor">
-                        <a href="#" class="repository-info-contributor-name">EvanDotPro</a>
-                        <a href="#" class="repository-info-contributor-like">Like</a>
-                    </div>
-                    <div class="repository-info-contributor">
-                        <a href="#" class="repository-info-contributor-name">marc-mabe</a>
-                        <a href="#" class="repository-info-contributor-like">Unlike</a>
-                    </div>
-                    <div class="repository-info-contributor">
-                        <a href="#" class="repository-info-contributor-name">blanchonvincent</a>
-                        <a href="#" class="repository-info-contributor-like">Like</a>
-                    </div>
+
+                    <div class="clear"></div>
                 </div>
             </div>
 
         </div><!-- #content-->
 
-        <footer id="footer">
-        </footer><!-- #footer -->
+        <!--<footer id="footer">
+        </footer>--><!-- #footer -->
 
     </div><!-- #wrapper -->
 
