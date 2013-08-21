@@ -109,7 +109,7 @@ table td:last-child {
     padding: 40px 8px;
 }
 
-.repository-info h1,
+#content h1,
 .repository-info-title {
     font-size: 24px;
     line-height: 30px;
@@ -156,7 +156,9 @@ table.repository-info-contributors td {
 }
 
 .repository-info-contributor-like,
-.repository-info-contributor-unlike {
+.repository-info-contributor-unlike,
+.search-result-like,
+.search-result-unlike {
     background-color: #DDD;
     border: 1px solid #CCC;
     -webkit-border-radius: 5px;
@@ -180,19 +182,65 @@ table.repository-info-contributors td {
     border: 1px solid #D9D9D9;
 }
 
-.repository-info-contributor-like {
+.repository-info-contributor-like,
+.search-result-like {
     background-image: url(../images/like-icon.png);
 }
 
-.repository-info-contributor-unlike {
+.repository-info-contributor-unlike,
+.search-result-unlike {
     background-image: url(../images/unlike-icon.png);
+}
+
+.search-result-like,
+.search-result-unlike {
+    background-color: #FFF;
+    float: right;
+}
+
+.search-result-like-loading {
+    float: right;
+}
+
+.search-result-like:hover,
+.search-result-unlike:hover {
+    background-color: #F5F5F5;
+    border: 1px solid #D9D9D9;
+}
+
+.search-result {
+    padding: 6px;
+    background-color: #F0F0F0;
+    border: 1px solid #D9D9D9;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.search-result-header,
+.search-result-description {
+    margin-bottom: 10px;
+}
+
+.search-result-title {
+    font-size: 24px;
+    line-height: 30px;
+    margin-right: 50px;
+}
+
+.search-result-owner {
+    float: right;
+}
+
+.search-result-footer-watchers {
+    margin-right: 50px;
 }
 
 /* Footer
 -----------------------------------------------------------------------------*/
-#footer {
+/*#footer {
     height: 100px;
     background: #DDD;
     -webkit-box-shadow: 0px -2px 2px 0px #CCC;
     box-shadow: 0px -2px 2px 0px #CCC;
-}
+}*/
