@@ -7,7 +7,8 @@
 .repository-info-line-title,
 .repository-info-description-title,
 .repository-info-contributor-like,
-.repository-info-contributor-unlike {
+.repository-info-contributor-unlike,
+.user-info-block-line-title {
     zoom: 1;
     display: inline;
 }

@@ -158,7 +158,9 @@ table.repository-info-contributors td {
 .repository-info-contributor-like,
 .repository-info-contributor-unlike,
 .search-result-like,
-.search-result-unlike {
+.search-result-unlike,
+.user-info-like,
+.user-info-unlike {
     background-color: #DDD;
     border: 1px solid #CCC;
     -webkit-border-radius: 5px;
@@ -177,18 +179,22 @@ table.repository-info-contributors td {
 }
 
 .repository-info-contributor-like:hover,
-.repository-info-contributor-unlike:hover {
+.repository-info-contributor-unlike:hover,
+.user-info-like:hover,
+.user-info-unlike:hover {
     background-color: #F0F0F0;
     border: 1px solid #D9D9D9;
 }
 
 .repository-info-contributor-like,
-.search-result-like {
+.search-result-like,
+.user-info-like {
     background-image: url(../images/like-icon.png);
 }
 
 .repository-info-contributor-unlike,
-.search-result-unlike {
+.search-result-unlike,
+.user-info-unlike {
     background-image: url(../images/unlike-icon.png);
 }
 
@@ -234,6 +240,32 @@ table.repository-info-contributors td {
 
 .search-result-footer-watchers {
     margin-right: 50px;
+}
+
+.user-info-left-column,
+.user-info-right-column {
+    float: left;
+}
+
+.user-info-left-column {
+    padding-right: 2%;
+}
+
+.user-info-right-column {
+}
+
+.user-info-avatar-image {
+    width: 140px;
+}
+
+.user-info-block-line {
+    margin-bottom: 10px;
+}
+
+.user-info-block-line-title {
+    font-weight: bold;
+    width: 100px;
+    display: inline-block;
 }
 
 /* Footer
