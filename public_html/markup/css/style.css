@@ -98,6 +98,7 @@ table td:last-child {
     background: none;
     border: none;
     width: 20px;
+	height: 20px;
     background-image: url(../images/search-icon.png);
     background-repeat: no-repeat;
     cursor: pointer;
