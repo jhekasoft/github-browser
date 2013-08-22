@@ -47,8 +47,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=github_browser',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'admin',
+			'username' => 'user',
+			'password' => 'usbw',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
