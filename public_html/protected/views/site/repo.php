@@ -41,7 +41,7 @@ $this->breadcrumbs = array(
                 <?php if (count($additionalContributors) > 0) { ?>
                     <tr>
                         <td colspan="2">
-                            <a class="repository-info-contributors-additional-link pseudolink" href="javascript: void(0);" onclick="$('.repository-info-contributors-additional').fadeToggle();">Show all</a>
+                            <a class="repository-info-contributors-additional-link pseudolink" href="javascript: void(0);" onclick="$('.repository-info-contributors-additional').fadeToggle();">Show others</a>
                         </td>
                     </tr>
                     <tbody class="repository-info-contributors-additional" style="display: none;">
