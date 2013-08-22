@@ -256,8 +256,15 @@ table.repository-info-contributors td {
 .user-info-right-column {
 }
 
+.user-info-avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    background: #DDD;
+}
+
 .user-info-avatar-image {
-    width: 140px;
+    width: 80px;
 }
 
 .user-info-block-line {

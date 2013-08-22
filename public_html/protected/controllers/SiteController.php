@@ -42,12 +42,35 @@ class SiteController extends Controller
 
     public function actionRepo()
     {
-        $this->render('repo');
+        $userName = Yii::app()->request->getParam('user');
+        $repoName = Yii::app()->request->getParam('repo');
+
+        $client = new Github\Client();
+
+        $repo = $client->api('repos')->show($userName, $repoName);
+
+        try {
+            $contributors = $client->api('repo')->contributors($userName, $repoName);
+        } catch(Exception $e) {
+            $contributors = null;
+        }
+
+        $this->render('repo', array(
+            'repo' => $repo,
+            'contributors' => $contributors
+        ));
     }
 
     public function actionUser()
     {
-        $this->render('user');
+        $userName = Yii::app()->request->getParam('user');
+
+        $client = new Github\Client();
+        $user = $client->api('user')->show($userName);
+
+        $this->render('user', array(
+            'user' => $user
+        ));
     }
 
     // Uncomment the following methods and override them if needed

@@ -16,13 +16,13 @@ $this->breadcrumbs = array(
         <?php foreach ($repositories as $repository) { ?>
             <div class="search-result">
                 <div class="search-result-header">
-                    <a class="search-result-title" href="index.html"><?php echo $repository['name']; ?></a>
+                    <?php echo CHtml::link($repository['name'], '/repo/' . $repository['username'] . '/' . $repository['name'], array('class' => 'search-result-title')); ?>
 
                     <?php if (!empty($repository['homepage'])) { ?>
                         <a class="search-result-homepage" href="<?php echo $repository['homepage']; ?>" target="_blank"><?php echo $repository['homepage']; ?></a>
                     <?php } ?>
 
-                    <a class="search-result-owner" href="user.html"><?php echo $repository['username']; ?></a>
+                    <?php echo CHtml::link($repository['username'], '/user/' . $repository['username'], array('class' => 'search-result-owner')); ?>
                 </div>
 
                 <div class="search-result-description">

@@ -39,6 +39,9 @@ return array(
             'showScriptName'=>false,
             'rules'=>array(
                 '/' => '/site/index',
+                '/search' => '/site/search',
+                '/repo/<user:[\w\-]+>/<repo:[\w\-]+>'=>'site/repo',
+                '/user/<user:[\w\-]+>'=>'site/user',
                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
