@@ -36,7 +36,7 @@
 
                 <?php echo CHtml::beginForm('/search', 'get', array('class' => 'search')); ?>
                     <div class="search-block">
-                        <?php echo CHtml::textField('search', $this->searchKeyword, array('class' => 'search-input', 'placeholder'=>'Search')); ?>
+                        <?php echo CHtml::textField('search', isset($this->searchKeyword)?$this->searchKeyword:'', array('class' => 'search-input', 'placeholder'=>'Search')); ?>
                         <?php echo CHtml::submitButton('', array('class' => 'search-submit', 'name' => '')); ?>
                     </div>
                 <?php echo CHtml::endForm(); ?>
