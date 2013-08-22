@@ -58,7 +58,7 @@ class SiteController extends Controller
             $allContributors = $client->api('repo')->contributors($userName, $repoName);
             $contributors = array_slice($allContributors, 0, 5);
             $additionalContributors = array_slice($allContributors, 5);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             $contributors = null;
             $additionalContributors = null;
         }
