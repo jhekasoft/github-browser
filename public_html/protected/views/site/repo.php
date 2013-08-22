@@ -4,7 +4,7 @@
 $this->pageTitle = Yii::app()->name . ' - ' . $repo['name'];
 
 $this->breadcrumbs = array(
-    'Repo',
+    isset($mainPage)?'Main':'Repo',
 );
 ?>
 
@@ -19,8 +19,8 @@ $this->breadcrumbs = array(
         <div class="repository-info-line"><span class="repository-info-line-title">Watchers:</span> <?php echo $repo['watchers_count']; ?></div>
         <div class="repository-info-line"><span class="repository-info-line-title">Forks:</span> <?php echo $repo['forks_count']; ?></div>
         <div class="repository-info-line"><span class="repository-info-line-title">Open issues:</span> <?php echo $repo['open_issues_count']; ?></div>
-        <div class="repository-info-line"><span class="repository-info-line-title">Homepage:</span> <a href="<?php echo $repo['homepage']; ?>" target="_blank"><?php echo $repo['homepage']; ?></a></div>
-        <div class="repository-info-line"><span class="repository-info-line-title">GitHub repo:</span> <a href="<?php echo $repo['html_url']; ?>" target="_blank"><?php echo $repo['html_url']; ?></a></div>
+        <div class="repository-info-line"><span class="repository-info-line-title">Homepage:</span> <?php echo CHtml::link($repo['homepage'], $repo['homepage'], array('target' => '_blank')); ?></div>
+        <div class="repository-info-line"><span class="repository-info-line-title">GitHub repo:</span> <?php echo CHtml::link($repo['html_url'], $repo['html_url'], array('target' => '_blank')); ?></div>
         <div class="repository-info-line"><span class="repository-info-line-title">Created at:</span> <?php echo $repo['created_at']; ?></div>
     </div>
 
@@ -32,7 +32,7 @@ $this->breadcrumbs = array(
                 <?php if (count($contributors) > 0) { ?>
                     <?php foreach ($contributors as $contributor) { ?>
                         <tr>
-                            <td><a href="#"><?php echo $contributor['login']; ?></a></td>
+                            <td><?php echo CHtml::link($contributor['login'], '/user/' . $contributor['login']); ?></td>
                             <td><a href="#" class="repository-info-contributor-like">Like</a></td>
                         </tr>
                     <?php } ?>

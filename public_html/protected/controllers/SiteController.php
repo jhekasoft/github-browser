@@ -7,7 +7,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $this->render('index');
+        $_GET['user'] = Yii::app()->params['defaultRepo']['username'];
+        $_GET['repo'] = Yii::app()->params['defaultRepo']['name'];
+        $_GET['main_page'] = true;
+        $this->forward('/site/repo');
+
+        //$this->render('index');
     }
 
     /**
@@ -57,7 +62,8 @@ class SiteController extends Controller
 
         $this->render('repo', array(
             'repo' => $repo,
-            'contributors' => $contributors
+            'contributors' => $contributors,
+            'mainPage' => Yii::app()->request->getParam('mainPage', false)
         ));
     }
 
