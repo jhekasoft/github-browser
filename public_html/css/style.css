@@ -16,6 +16,13 @@ a {
 a:hover {
     text-decoration: none;
 }
+a.pseudolink {
+    text-decoration: none;
+    border-bottom: 1px dashed #376F9E;
+}
+a.pseudolink:hover {
+    border-bottom: none;
+}
 p {
     margin: 0 0 18px
 }
@@ -155,6 +162,10 @@ table td:last-child {
 
 table.repository-info-contributors td {
     padding-bottom: 10px;
+}
+
+.repository-info-contributors-additional-link {
+    float: right;
 }
 
 .repository-info-contributor-like,

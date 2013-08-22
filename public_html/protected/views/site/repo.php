@@ -37,6 +37,22 @@ $this->breadcrumbs = array(
                         </tr>
                     <?php } ?>
                 <?php } ?>
+
+                <?php if (count($additionalContributors) > 0) { ?>
+                    <tr>
+                        <td colspan="2">
+                            <a class="repository-info-contributors-additional-link pseudolink" href="javascript: void(0);" onclick="$('.repository-info-contributors-additional').fadeToggle();">Show all</a>
+                        </td>
+                    </tr>
+                    <tbody class="repository-info-contributors-additional" style="display: none;">
+                        <?php foreach ($additionalContributors as $additionalContributor) { ?>
+                            <tr>
+                                <td><?php echo CHtml::link($additionalContributor['login'], '/user/' . $additionalContributor['login']); ?></td>
+                                <td><a href="#" class="repository-info-contributor-like">Like</a></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                <?php } ?>
             </table>
         </div>
     </div>

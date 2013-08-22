@@ -55,14 +55,18 @@ class SiteController extends Controller
         $repo = $client->api('repos')->show($userName, $repoName);
 
         try {
-            $contributors = $client->api('repo')->contributors($userName, $repoName);
+            $allContributors = $client->api('repo')->contributors($userName, $repoName);
+            $contributors = array_slice($allContributors, 0, 5);
+            $additionalContributors = array_slice($allContributors, 5);
         } catch(Exception $e) {
             $contributors = null;
+            $additionalContributors = null;
         }
 
         $this->render('repo', array(
             'repo' => $repo,
             'contributors' => $contributors,
+            'additionalContributors' => $additionalContributors,
             'mainPage' => Yii::app()->request->getParam('mainPage', false)
         ));
     }
