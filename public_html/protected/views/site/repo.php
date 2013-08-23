@@ -34,9 +34,13 @@ $this->breadcrumbs = array(
                         <tr>
                             <td><?php echo CHtml::link($contributor['login'], '/user/' . $contributor['login']); ?></td>
                             <td>
-								<a style="<?php if ($contributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.like('repository-info-contributor', 'user', '<?php echo $contributor['login'] ?>');" class="repository-info-contributor-like repository-info-contributor-like_<?php echo $contributor['login'] ?>">Like</a>
-								<a style="<?php if (!$contributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.unlike('repository-info-contributor', 'user', '<?php echo $contributor['login'] ?>');" class="repository-info-contributor-unlike repository-info-contributor-unlike_<?php echo $contributor['login'] ?>">Unlike</a>
-								<img class="repository-info-contributor-like-loading repository-info-contributor-like-loading_<?php echo $contributor['login'] ?>" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+								<?php $this->widget('LikeWidget', array(
+										'likeClass' => 'repository-info-contributor',
+										'type' => 'user',
+										'user' => $contributor['login'],
+										'name' => null,
+										'liked' => $contributor['like']
+									)); ?>
 							</td>
                         </tr>
                     <?php } ?>
