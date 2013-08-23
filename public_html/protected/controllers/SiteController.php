@@ -56,6 +56,9 @@ class SiteController extends Controller
 
         $repo = $client->api('repos')->show($userName, $repoName);
 
+		$contributors = null;
+		$additionalContributors = null;
+
         try {
             $allContributors = $client->api('repo')->contributors($userName, $repoName);
 			$allContributors = Like::model()->loadLikeDataToContributors($allContributors);
@@ -63,8 +66,10 @@ class SiteController extends Controller
             $contributors = array_slice($allContributors, 0, 5);
             $additionalContributors = array_slice($allContributors, 5);
         } catch (Exception $e) {
-            $contributors = null;
-            $additionalContributors = null;
+			if (404 != $e->getCode()) {
+				echo $e;
+				Yii::app()->end();
+			}
         }
 
         $this->render('repo', array(
