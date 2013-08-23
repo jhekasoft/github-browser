@@ -18,7 +18,6 @@ var Likes = {
 			newButton = 'like';
 		}
 
-		console.log('.' + likeClass + '-' + defaultButton + '_' + likeName);
 		$('.' + likeClass + '-' + defaultButton + '_' + likeName).hide();
 		$('.' + likeClass + '-like-loading_' + likeName).show();
 
