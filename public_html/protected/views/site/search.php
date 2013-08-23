@@ -32,7 +32,14 @@ $this->breadcrumbs = array(
                 <div class="search-result-footer">
                     <span class="search-result-footer-item search-result-footer-watchers">Watchers: <?php echo $repository['watchers']; ?></span>
                     <span class="search-result-footer-item">Forks: <?php echo $repository['forks']; ?></span>
-                    <a href="#" class="search-result-like">Like</a>
+
+					<?php if ($repository['like']) { ?>
+						<a href="#" class="search-result-unlike">Unlike</a>
+					<?php } else { ?>
+						<a href="#" class="search-result-like">Like</a>
+					<?php } ?>
+					<img class="search-result-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+
                     <div class="clear"></div>
                 </div>
             </div>

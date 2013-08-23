@@ -37,6 +37,8 @@ class SiteController extends Controller
             $client = new Github\Client();
             $response = $client->api('repos')->find($searchKeyword, array());
             $repositories = $response['repositories'];
+
+			$repositories = Like::model()->loadLikeDataToRepositories($repositories);
         }
 
         $this->render('search', array(
@@ -56,6 +58,8 @@ class SiteController extends Controller
 
         try {
             $allContributors = $client->api('repo')->contributors($userName, $repoName);
+			$allContributors = Like::model()->loadLikeDataToContributors($allContributors);
+
             $contributors = array_slice($allContributors, 0, 5);
             $additionalContributors = array_slice($allContributors, 5);
         } catch (Exception $e) {
@@ -78,8 +82,14 @@ class SiteController extends Controller
         $client = new Github\Client();
         $user = $client->api('user')->show($userName);
 
+		$likeModel = Like::model()->find('type=:type AND name=:name', array(
+			'type' => 'user', 'name' => $userName
+		));
+		$isLiked = !empty($likeModel)?true:false;
+
         $this->render('user', array(
-            'user' => $user
+            'user' => $user,
+			'isLiked' => $isLiked
         ));
     }
 

@@ -50,8 +50,8 @@ return array(
         'db'=>array(
             'connectionString' => 'mysql:host=localhost;dbname=github_browser',
             'emulatePrepare' => true,
-            'username' => 'user',
-            'password' => 'usbw',
+            'username' => 'root',
+            'password' => 'admin',
             'charset' => 'utf8',
         ),
         'errorHandler'=>array(

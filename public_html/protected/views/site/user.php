@@ -1,6 +1,8 @@
 <?php
 /* @var $this SiteController */
 
+$this->pageTitle = Yii::app()->name . ' - ' . $user['name'];
+
 $this->breadcrumbs = array(
     'User',
 );
@@ -12,9 +14,12 @@ $this->breadcrumbs = array(
             <img class="user-info-avatar-image" src="<?php echo $user['avatar_url']; ?>" alt="">
         </div>
 
-        <a href="#" class="user-info-like">Like</a>
-        <!--<a href="#" class="user-info-unlike">Unlike</a>
-        <img class="user-info-like-loading" src="images/load-icon.gif" alt="Please wait...">-->
+		<?php if ($isLiked) { ?>
+			<a href="#" class="user-info-unlike">Unlike</a>
+		<?php } else { ?>
+			<a href="#" class="user-info-like">Like</a>
+		<?php } ?>
+        <img class="user-info-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
 
     </div>
     <div class="user-info-right-column">
