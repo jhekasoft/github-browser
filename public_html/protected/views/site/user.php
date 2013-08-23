@@ -14,12 +14,9 @@ $this->breadcrumbs = array(
             <img class="user-info-avatar-image" src="<?php echo $user['avatar_url']; ?>" alt="">
         </div>
 
-		<?php if ($isLiked) { ?>
-			<a href="#" class="user-info-unlike">Unlike</a>
-		<?php } else { ?>
-			<a href="#" class="user-info-like">Like</a>
-		<?php } ?>
-        <img class="user-info-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+		<a style="<?php if ($isLiked) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.like('user-info', 'user', '<?php echo $user['login'] ?>');" class="user-info-like user-info-like_<?php echo $user['login'] ?>">Like</a>
+		<a style="<?php if (!$isLiked) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.unlike('user-info', 'user', '<?php echo $user['login'] ?>');" class="user-info-unlike user-info-unlike_<?php echo $user['login'] ?>">Unlike</a>
+		<img class="user-info-like-loading user-info-like-loading_<?php echo $user['login'] ?>" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
 
     </div>
     <div class="user-info-right-column">

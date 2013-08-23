@@ -34,12 +34,9 @@ $this->breadcrumbs = array(
                         <tr>
                             <td><?php echo CHtml::link($contributor['login'], '/user/' . $contributor['login']); ?></td>
                             <td>
-								<?php if ($contributor['like']) { ?>
-									<a href="#" class="repository-info-contributor-unlike">Unlike</a>
-								<?php } else { ?>
-									<a href="#" class="repository-info-contributor-like">Like</a>
-								<?php } ?>
-								<img class="user-info-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+								<a style="<?php if ($contributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.like('repository-info-contributor', 'user', '<?php echo $contributor['login'] ?>');" class="repository-info-contributor-like repository-info-contributor-like_<?php echo $contributor['login'] ?>">Like</a>
+								<a style="<?php if (!$contributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.unlike('repository-info-contributor', 'user', '<?php echo $contributor['login'] ?>');" class="repository-info-contributor-unlike repository-info-contributor-unlike_<?php echo $contributor['login'] ?>">Unlike</a>
+								<img class="repository-info-contributor-like-loading repository-info-contributor-like-loading_<?php echo $contributor['login'] ?>" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
 							</td>
                         </tr>
                     <?php } ?>
@@ -56,12 +53,9 @@ $this->breadcrumbs = array(
                             <tr>
                                 <td><?php echo CHtml::link($additionalContributor['login'], '/user/' . $additionalContributor['login']); ?></td>
                                 <td>
-									<?php if ($additionalContributor['like']) { ?>
-										<a href="#" class="repository-info-contributor-unlike">Unlike</a>
-									<?php } else { ?>
-										<a href="#" class="repository-info-contributor-like">Like</a>
-									<?php } ?>
-									<img class="user-info-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+									<a style="<?php if ($additionalContributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.like('repository-info-contributor', 'user', '<?php echo $additionalContributor['login'] ?>');" class="repository-info-contributor-like repository-info-contributor-like_<?php echo $additionalContributor['login'] ?>">Like</a>
+									<a style="<?php if (!$additionalContributor['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.unlike('repository-info-contributor', 'user', '<?php echo $additionalContributor['login'] ?>');" class="repository-info-contributor-unlike repository-info-contributor-unlike_<?php echo $additionalContributor['login'] ?>">Unlike</a>
+									<img class="repository-info-contributor-like-loading repository-info-contributor-like-loading_<?php echo $additionalContributor['login'] ?>" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
 								</td>
                             </tr>
                         <?php } ?>

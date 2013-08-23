@@ -33,12 +33,9 @@ $this->breadcrumbs = array(
                     <span class="search-result-footer-item search-result-footer-watchers">Watchers: <?php echo $repository['watchers']; ?></span>
                     <span class="search-result-footer-item">Forks: <?php echo $repository['forks']; ?></span>
 
-					<?php if ($repository['like']) { ?>
-						<a href="#" class="search-result-unlike">Unlike</a>
-					<?php } else { ?>
-						<a href="#" class="search-result-like">Like</a>
-					<?php } ?>
-					<img class="search-result-like-loading" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+					<a style="<?php if ($repository['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.like('search-result', 'repo', '<?php echo $repository['username'] ?>', '<?php echo $repository['name'] ?>');" class="search-result-like search-result-like_<?php echo $repository['username'] ?>_<?php echo $repository['name'] ?>">Like</a>
+					<a style="<?php if (!$repository['like']) { ?>display:none;<?php } ?>" href="javascript: void(0);" onclick="Likes.unlike('search-result', 'repo', '<?php echo $repository['username'] ?>', '<?php echo $repository['name'] ?>');" class="search-result-unlike search-result-unlike_<?php echo $repository['username'] ?>_<?php echo $repository['name'] ?>">Unlike</a>
+					<img class="search-result-like-loading search-result-like-loading_<?php echo $repository['username'] ?>_<?php echo $repository['name'] ?>" style="display: none;" src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
 
                     <div class="clear"></div>
                 </div>

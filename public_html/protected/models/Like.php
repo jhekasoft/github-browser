@@ -138,6 +138,12 @@ class Like extends CActiveRecord
 		return $repositories;
 	}
 
+	/**
+	 * Return likes
+	 * @param string $type
+	 * @param null|array $names
+	 * @return null|array
+	 */
 	protected function getLikes($type = 'user', $names = null)
 	{
 		if (null == $names) {
