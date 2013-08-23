@@ -32,14 +32,7 @@ CREATE TABLE IF NOT EXISTS `ghb_like` (
   `name` varchar(255) NOT NULL,
   `datetime` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Дамп данных таблицы `ghb_like`
---
-
-INSERT INTO `ghb_like` (`id`, `type`, `name`, `datetime`) VALUES
-(1, 'user', 'jhekasoft', '2013-01-01 12:00:00');
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

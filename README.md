@@ -18,7 +18,7 @@ In `public_html/protected/config/main.php` set database connection parameters:
 ),
 ```
 
-Dump database: `inf/github_browser.sql`.
+Import database: `inf/github_browser.sql`.
 
 Please ensure these directories are writable: `public_html/assets/`,
 `public_html/procected/runtime/`.
