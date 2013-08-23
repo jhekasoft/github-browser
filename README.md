@@ -3,6 +3,14 @@ github-browser
 
 ## Installation
 
+Clone repo:
+
+```sh
+git clone https://github.com/jhekasoft/github-browser.git
+```
+
+Install dependencies:
+
 ```sh
 php composer.phar install
 ```
