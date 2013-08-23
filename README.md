@@ -9,7 +9,7 @@ php composer.phar install
 In `public_html/protected/config/main.php` set database connection parameters:
 
 ```php
-'db'=>array(
+'db' => array(
 	'connectionString' => 'mysql:host=localhost;dbname=github_browser',
 	'emulatePrepare' => true,
 	'username' => 'user',
@@ -17,6 +17,8 @@ In `public_html/protected/config/main.php` set database connection parameters:
 	'charset' => 'utf8',
 ),
 ```
+
+Dump database: `inf/github_browser.sql`.
 
 Please ensure these directories are writable: `public_html/assets/`,
 `public_html/procected/runtime/`.
