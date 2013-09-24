@@ -10,7 +10,8 @@ return array(
     'name'=>'GitHub Browser',
 
     // preloading 'log' component
-    'preload'=>array('log'),
+	'preload'=>array('log'),
+    //'preload'=>array('debug'),
 
     // autoloading model and component classes
     'import'=>array(
@@ -53,6 +54,8 @@ return array(
             'username' => 'user',
             'password' => 'usbw',
             'charset' => 'utf8',
+//            'enableProfiling' => true,
+//            'enableParamLogging' => true,
         ),
         'errorHandler'=>array(
             // use 'site/error' action to display errors
@@ -73,6 +76,9 @@ return array(
                 */
             ),
         ),
+//        'debug' => array(
+//            'class' => 'ext.yii2-debug.Yii2Debug',
+//        ),
     ),
 
     // application-level parameters that can be accessed

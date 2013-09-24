@@ -14,13 +14,13 @@ $this->breadcrumbs = array(
             <img class="user-info-avatar-image" src="<?php echo $user['avatar_url']; ?>" alt="">
         </div>
 
-		<?php $this->widget('LikeWidget', array(
-				'likeClass' => 'user-info',
-				'type' => 'user',
-				'user' => $user['login'],
-				'name' => null,
-				'liked' => $isLiked
-			)); ?>
+        <?php $this->widget('LikeWidget', array(
+                'likeClass' => 'user-info',
+                'type' => 'user',
+                'user' => $user['login'],
+                'name' => null,
+                'liked' => $isLiked
+            )); ?>
 
     </div>
     <div class="user-info-right-column">

@@ -11,7 +11,7 @@
     <!--[if lte IE 6]><link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style_ie.css" type="text/css" media="screen, projection" /><![endif]-->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/likes.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/likes.js"></script>
     <script>
         $(document).ready(function() {
             $('.search-input').placeholder();

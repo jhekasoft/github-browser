@@ -38,7 +38,7 @@ class SiteController extends Controller
             $response = $client->api('repos')->find($searchKeyword, array());
             $repositories = $response['repositories'];
 
-			$repositories = Like::model()->loadLikeDataToRepositories($repositories);
+            $repositories = Like::model()->loadLikeDataToRepositories($repositories);
         }
 
         $this->render('search', array(
@@ -56,20 +56,20 @@ class SiteController extends Controller
 
         $repo = $client->api('repos')->show($userName, $repoName);
 
-		$contributors = null;
-		$additionalContributors = null;
+        $contributors = null;
+        $additionalContributors = null;
 
         try {
             $allContributors = $client->api('repo')->contributors($userName, $repoName);
-			$allContributors = Like::model()->loadLikeDataToContributors($allContributors);
+            $allContributors = Like::model()->loadLikeDataToContributors($allContributors);
 
             $contributors = array_slice($allContributors, 0, 5);
             $additionalContributors = array_slice($allContributors, 5);
         } catch (Exception $e) {
-			if (404 != $e->getCode()) {
-				echo $e;
-				Yii::app()->end();
-			}
+            if (404 != $e->getCode()) {
+                echo $e;
+                Yii::app()->end();
+            }
         }
 
         $this->render('repo', array(
@@ -87,14 +87,14 @@ class SiteController extends Controller
         $client = new Github\Client();
         $user = $client->api('user')->show($userName);
 
-		$likeModel = Like::model()->find('type=:type AND name=:name', array(
-			'type' => 'user', 'name' => $userName
-		));
-		$isLiked = !empty($likeModel)?true:false;
+        $likeModel = Like::model()->find('type=:type AND name=:name', array(
+            'type' => 'user', 'name' => $userName
+        ));
+        $isLiked = !empty($likeModel)?true:false;
 
         $this->render('user', array(
             'user' => $user,
-			'isLiked' => $isLiked
+            'isLiked' => $isLiked
         ));
     }
 

@@ -88,84 +88,84 @@ class Like extends CActiveRecord
         ));
     }
 
-	/**
-	 * Adds like data to contributors
-	 * @param array $allContributors
-	 * @return array
-	 */
-	public function loadLikeDataToContributors(array $allContributors)
-	{
-		$allContributorsLogins = array();
-		if (count($allContributors) > 0) {
-			foreach ($allContributors as $contributor) {
-				$allContributorsLogins[] = $contributor['login'];
-			}
-		}
+    /**
+     * Adds like data to contributors
+     * @param  array $allContributors
+     * @return array
+     */
+    public function loadLikeDataToContributors(array $allContributors)
+    {
+        $allContributorsLogins = array();
+        if (count($allContributors) > 0) {
+            foreach ($allContributors as $contributor) {
+                $allContributorsLogins[] = $contributor['login'];
+            }
+        }
 
-		$likes = $this->getLikes('user', $allContributorsLogins);
+        $likes = $this->getLikes('user', $allContributorsLogins);
 
-		if (count($allContributors) > 0) {
-			foreach ($allContributors as $key => $contributor) {
-				$allContributors[$key]['like'] = isset($likes[$contributor['login']]);
-			}
-		}
+        if (count($allContributors) > 0) {
+            foreach ($allContributors as $key => $contributor) {
+                $allContributors[$key]['like'] = isset($likes[$contributor['login']]);
+            }
+        }
 
-		return $allContributors;
-	}
+        return $allContributors;
+    }
 
-	/**
-	 * Adds like data to repositories
-	 * @param array $repositories
-	 * @return array
-	 */
-	public function loadLikeDataToRepositories(array $repositories)
-	{
-		$repositoriesNames = array();
-		if (count($repositories) > 0) {
-			foreach ($repositories as $repository) {
-				$repositoriesNames[] = $repository['username'] . '/' . $repository['name'];
-			}
-		}
+    /**
+     * Adds like data to repositories
+     * @param  array $repositories
+     * @return array
+     */
+    public function loadLikeDataToRepositories(array $repositories)
+    {
+        $repositoriesNames = array();
+        if (count($repositories) > 0) {
+            foreach ($repositories as $repository) {
+                $repositoriesNames[] = $repository['username'] . '/' . $repository['name'];
+            }
+        }
 
-		$likes = $this->getLikes('repo', $repositoriesNames);
+        $likes = $this->getLikes('repo', $repositoriesNames);
 
-		if (count($repositories) > 0) {
-			foreach ($repositories as $key => $repository) {
-				$repositories[$key]['like'] = isset($likes[$repository['username'] . '/' . $repository['name']]);
-			}
-		}
+        if (count($repositories) > 0) {
+            foreach ($repositories as $key => $repository) {
+                $repositories[$key]['like'] = isset($likes[$repository['username'] . '/' . $repository['name']]);
+            }
+        }
 
-		return $repositories;
-	}
+        return $repositories;
+    }
 
-	/**
-	 * Return likes
-	 * @param string $type
-	 * @param null|array $names
-	 * @return null|array
-	 */
-	protected function getLikes($type = 'user', $names = null)
-	{
-		if (null == $names) {
-			return null;
-		}
+    /**
+     * Return likes
+     * @param  string     $type
+     * @param  null|array $names
+     * @return null|array
+     */
+    protected function getLikes($type = 'user', $names = null)
+    {
+        if (null == $names) {
+            return null;
+        }
 
-		$criteria = new CDbCriteria();
-		$criteria->condition = 'type=:type';
-		$criteria->params = array('type' => $type);
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'type=:type';
+        $criteria->params = array('type' => $type);
 
-		$criteria->addInCondition('name', $names);
-		$likesAll = self::model()->findAll($criteria, array('index' => 'login'));
+        $criteria->addInCondition('name', $names);
+        $likesAll = self::model()->findAll($criteria, array('index' => 'login'));
 
-		$likes = array();
-		if (count($likesAll) > 0) {
-			foreach ($likesAll as $like) {
-				$likes[$like->name] = true;
-			}
-		}
+        $likes = array();
+        if (count($likesAll) > 0) {
+            foreach ($likesAll as $like) {
+                $likes[$like->name] = true;
+            }
+        }
 
-		return $likes;
-	}
+        return $likes;
+    }
 
     /**
      * Returns the static model of the specified AR class.

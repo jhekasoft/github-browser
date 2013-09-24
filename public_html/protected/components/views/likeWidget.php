@@ -9,5 +9,5 @@
    class="<?php echo $likeClass; ?>-unlike <?php echo $likeClass; ?>-unlike_<?php echo $user ?><?php echo !empty($name)?'_'.$name:'' ?>">Unlike</a>
 
 <img class="<?php echo $likeClass; ?>-like-loading <?php echo $likeClass; ?>-like-loading_<?php echo $user ?><?php echo !empty($name)?'_'.$name:'' ?>"
-	 style="display: none;"
-	 src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">
+     style="display: none;"
+     src="<?php echo Yii::app()->request->baseUrl; ?>/images/load-icon.gif" alt="Please wait...">

@@ -33,12 +33,12 @@ $this->breadcrumbs = array(
                     <span class="search-result-footer-item search-result-footer-watchers">Watchers: <?php echo $repository['watchers']; ?></span>
                     <span class="search-result-footer-item">Forks: <?php echo $repository['forks']; ?></span>
 
-					<?php $this->widget('LikeWidget', array(
-							'likeClass' => 'search-result',
-							'type' => 'repo',
-							'user' => $repository['username'],
-							'name' => $repository['name'],
-							'liked' => $repository['like']
+                    <?php $this->widget('LikeWidget', array(
+                            'likeClass' => 'search-result',
+                            'type' => 'repo',
+                            'user' => $repository['username'],
+                            'name' => $repository['name'],
+                            'liked' => $repository['like']
                         )); ?>
 
                     <div class="clear"></div>
